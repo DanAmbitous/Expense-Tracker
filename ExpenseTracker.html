@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link href='ExpenseTracker.css' rel='stylesheet'>
+    <script src='ExpenseTracker.js' defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<body>
+    <div id='flex'>
+    <input id='moneyInput' placeholder='Insert amount of money here'>
+    <input id='theBalance' placeholder='The Balance' readonly>
+    <button id='add'><i class='material-icons'><span class='button'>add_circle</span></i></button>
+    <button id='remove'><i class='material-icons'><span class='button'>delete</span></i></button>
+    </div>
+    <table>
+        <tr>
+            <th id='nameHeader'>Name</th>
+            <th id='expenseHeader'>Expense</th>
+            <th id='dateHeader'>Date</th>
+        </tr>
+        <tr>
+            <th id='theName'>
+                <input placeholder='Name' id='formateName'>
+            </th>
+            <th id='theExpense'>
+                <input placeholder='Expense' id='formateExpense'>
+            </th>
+            <th id='theDate'>
+                <input placeholder='Date' id='formateDate'>
+            </th>
+        </tr>
+    </table>
+</body>
+</html> 

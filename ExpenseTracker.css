@@ -1,0 +1,84 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align:center;
+    animation: app 10s;
+}
+
+input {
+    width:25vw;
+    height:2.5vw;
+    padding:1vw;
+    font-size:1.2vw;
+    display:flex;
+    align-items:center;
+    margin:1vw;
+    background-color:rgb(247, 247, 119);
+    border:0.5vw solid rgb(247, 247, 119);
+    border-radius:1vw;
+    outline:none;
+}
+
+input:focus {
+    background-color:yellow;
+    border-color:gold;
+}
+
+table {
+    position:relative;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+#flex {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#moneyInput {
+    width:60vw;
+    font-size:2.5vw;
+    height:5vh;
+}
+
+#theBalance {
+    width:60vw;
+    font-size:2.5vw;
+    height:5vh;
+    background-color:lightgreen;
+    border-color:lightgreen;
+}
+
+button {
+    cursor:pointer;
+    background-color:lime;
+    border:0.5em solid lime;
+    border-radius:1vw;
+    color:white;
+    padding:0.5vw;
+    margin:1vw;
+    outline:transparent;
+}
+
+button:active {
+    opacity:0.5;
+}
+
+@keyframes app {
+    from {
+        transform:scale(1);
+    }
+}
+
+#addName {
+    width:15vw;
+}
+
+#remove {
+    background-color: red;
+    border-color:red;
+}
+
+.material-icons {
+    padding:1vw;
+}
