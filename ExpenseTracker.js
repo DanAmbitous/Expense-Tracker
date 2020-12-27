@@ -51,7 +51,7 @@ remove.addEventListener('click', removeFunction);*/
     })
 }*/
 
-$('#add').click(function() {
+/*$('#add').click(function() {
     let headerName = $('#theName');
     let name = $('<input>');
     name.attr('placeholder', 'The item\'s name');
@@ -89,7 +89,7 @@ $('#add').click(function() {
         expense.empty();
     });
 });
-/*
+
 function removeFunction() {
     let inputs = document.querySelectorAll('.element');
     inputs.forEach(element => element.remove());
@@ -134,6 +134,50 @@ function output() {
     let balance = document.getElementById('theBalance');
     balance.value = output;
 }*/
+
+function removeRow(element) {
+    $(element).closest('tr').remove();
+};
+
+$(document).ready(function() {
+    $('#add').click(function() {
+        let newRow = 
+        `<tr>
+            <td>
+                <input class="input-name" placeholder='Name'>
+            </td>
+            <td>
+                <input class="input-expense" placeholder='Expense'>
+            </td>
+            <td> 
+                <input class="input-date" type='date' placeholder='Date'>
+            </td>
+            <td>
+                <button onclick='removeRow(this)' class='removeRow'><span class="material-icons">
+                remove_circle
+                </span></button>
+            </td>
+        </tr>`
+        $('#tbody').append(newRow);
+    });
+
+    $('#remove').click(function() {
+        $('#tbody').empty();
+    });
+
+    $('.input-name').dblclick(function(element) {
+        console.log('This works')
+    });
+});
+
+/*
+
+HINT
+
+1) add class to expense 
+2) Use "each" to calculate the sum
+
+*/
 
 /*$('#remove').click(function() {
     let inputs = $('.element');
