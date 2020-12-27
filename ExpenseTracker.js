@@ -1,10 +1,18 @@
-let add = document.getElementById('add');
-add.addEventListener('click', addFunction);
+/*let add = document.getElementById('add');
+add.addEventListener('click', addFunction);*/
 
-let remove = document.getElementById('remove');
-remove.addEventListener('click', removeFunction);
+/*$('#add').click(function() {
+    addFunction();
+});*/
 
-function addFunction() {
+/*let remove = document.getElementById('remove');
+remove.addEventListener('click', removeFunction);*/
+
+/*$('#remove').click(function() {
+    removeFunction();
+});*/
+
+/*function addFunction() {
     let headerName = document.getElementById('theName');
     let name = document.createElement('input'); 
     name.setAttribute('placeholder', 'Name');
@@ -41,8 +49,47 @@ function addFunction() {
         date.remove();
         expense.remove();
     })
-}
+}*/
 
+$('#add').click(function() {
+    let headerName = $('#theName');
+    let name = $('<input>');
+    name.attr('placeholder', 'The item\'s name');
+    name.attr('class', 'element');
+    headerName.append(name);
+
+    $(name).dblclick(function() {
+        name.empty();
+        date.empty();
+        expense.empty();
+    });
+
+    let headerExpense = $('#theExpense');
+    let expense = $('<input>');
+    expense.attr('placeholder', 'The item\'s expense');
+    expense.attr('class', 'element expense');
+    headerExpense.append(expense);
+
+    $('#expense').dblclick(function() {
+        name.empty();
+        date.empty();
+        expense.empty();
+    });
+
+    let headerDate = $('#theDate');
+    let date = $('<input>');
+    date.attr('placeholder', 'The item\'s date');
+    date.attr('class', 'element');
+    date.attr('type', 'date');
+    headerDate.append(date);
+
+    $(date).dblclick(function() { //?
+        name.empty();
+        date.empty();
+        expense.empty();
+    });
+});
+/*
 function removeFunction() {
     let inputs = document.querySelectorAll('.element');
     inputs.forEach(element => element.remove());
@@ -55,7 +102,7 @@ function removeFunction() {
 let save = document.getElementById('moneyChecker');
 let theExpense = document.getElementById('expense');
 
-let date = document.getElementById('formateDate');
+let date = document.getElementById('formateDate');  //double click
 date.setAttribute('type', 'date');
 date.addEventListener('dblclick', function() {
     date.value = '';
@@ -69,7 +116,7 @@ name.addEventListener('dblclick', function() {
 let expense = document.getElementById('formateExpense');
 expense.addEventListener('dblclick', function() {
     expense.value = '';
-});
+}); //double click
 
 let input = document.getElementById('moneyInput');
 input.addEventListener('input', output);
@@ -86,4 +133,51 @@ function output() {
     let output = outputInput - outputExpense;
     let balance = document.getElementById('theBalance');
     balance.value = output;
+}*/
+
+/*$('#remove').click(function() {
+    let inputs = $('.element');
+    inputs.forEach(element => element.empty());
+
+    name.val('');
+    expense.val('');
+    date.val('');
+});
+
+let save = $('#moneyChecker');
+let theExpense = $('#expense');
+
+let name = $('#formateName');
+$(name).dblclick(function() {
+    name.val('');
+});
+
+let expense = $('#formateExpense');
+$(expense).dblclick(function() {
+    expense.val('');
+});
+
+let date = $("#formateDate");
+date.attr('type', 'date');
+$(date).dblclick(function() {
+    date.val('');
+});
+
+let input = $('#moneyInput');
+$(input).click('input', output);
+$(expense).click('input', output);
+let expenses = $('.element expense');
+for (let index = 0; index < expenses.length; index++) {
+    expenses[index].$(click(function() {
+        $('input,', output)
+    }));
 }
+
+$(function output() {
+    let outputInput = input.value;
+    let outputExpense = expense.value;
+    let outputExpense = expense.value;
+    let output = outputInput - outputExpense;
+    let balance = $('#theBalance');
+    balance.val(output);
+});*/
