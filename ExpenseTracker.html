@@ -4,30 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
-    <link href='ExpenseTracker.css' rel='stylesheet'>
+    <link href="ExpenseTracker.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src='ExpenseTracker.js' defer></script>
+    <script src="ExpenseTracker.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+</head>
 <body>
-    <div id='flex'>
-    <input id='moneyInput' placeholder='Insert amount of money here'>
-    <input id='theBalance' placeholder='The Balance' readonly>
-    <button id='add'><i class='material-icons'><span class='button'>add_circle</span></i></button>
-    <button id='remove'><i class='material-icons'><span class='button'>delete</span></i></button>
+    <div id="menu">
+        <span id="menu-button" class="material-icons">
+        menu
+        </span>
+        <ul id="menu-page">
+            <li id="content">Content
+                <span id="content-button" class="material-icons">
+                    calculate
+                </span>
+            </li>
+            <li id="settings">Settings
+                <span id="settings-button" class="material-icons">
+                    settings
+                </span>
+            </li>
+        </ul>
     </div>
-    <table>
-        <thead>
-            <tr>
-                <th id='nameHeader'>Name</th>
-                <th id='expenseHeader'>Expense</th>
-                <th id='dateHeader'>Date</th>
-            </tr>
-        </thead>
-        <tbody id='tbody'>
-            
-        </tbody>
-    </table>
+
+    <!--Content page-->
+
+    <div id="content-page">
+        <div id="controls">
+            <input id="moneyInput" placeholder="Insert amount of money here">
+            <input id="theBalance" placeholder="The Balance" readonly>
+            <button id="add"><i class="material-icons"><span class="button">add_circle</span></i></button>
+            <button id="remove"><i class="material-icons"><span class="button">delete</span></i></button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th id="nameHeader">Name</th>
+                    <th id="expenseHeader">Expense</th>
+                    <th id="dateHeader">Date</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+    <!--Settings page-->
+
+    <div id="settings-page">
+        <h1>Settings</h1>
+    </div>
 </body>
 </html> 

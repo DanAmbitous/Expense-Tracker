@@ -1,7 +1,6 @@
 body {
     font-family: 'Open Sans', sans-serif;
     text-align:center;
-    animation: app 10s;
 }
 
 input {
@@ -27,7 +26,7 @@ table {
     width:100%;
 }
 
-#flex {
+#controls {
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -62,16 +61,6 @@ button:active {
     opacity:0.5;
 }
 
-@keyframes app {
-    from {
-        transform:scale(1);
-    }
-}
-
-#addName {
-    width:15vw;
-}
-
 #remove {
     background-color: red;
     border-color:red;
@@ -79,4 +68,52 @@ button:active {
 
 .material-icons {
     padding:1vw;
+}
+
+#rowRemoveButton {
+    background-color:silver;
+    border-color:silver;
+}
+
+#menu-button {
+    cursor:pointer;
+    display: flex;
+}
+
+#menu-button::selection {
+    background-color:none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15vw;
+    border-right:5px solid silver;
+    border-radius:5px;
+    background-color:rgb(255, 255, 255, 0.5);
+    text-align:left;
+    display:none;
+    position:fixed;
+}
+
+li {
+    display: block;
+    padding:1vw;
+    background-color:rgb(170, 170, 170, 0.5);
+    cursor:pointer;
+}
+
+li:hover {
+    background-color:rgb(138, 138, 138, 0.5);
+}
+
+#content-button {
+    position: relative;
+    top: 5px;
+}
+
+#settings-button {
+    position: relative;
+    top: 5px;
 }
