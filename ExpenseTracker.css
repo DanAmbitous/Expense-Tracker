@@ -135,6 +135,11 @@ li:hover {
     top: 5px;
 }
 
+#star-button {
+    position: relative;
+    top: 5px;
+}
+
 #incomes, #expenses {
     background-color:rgb(89, 208, 255);
     border-color:rgb(89, 208, 255);
@@ -168,4 +173,18 @@ li:hover {
     border-color:black;
     box-shadow:none;
     opacity:0.8;
+}
+
+.material-icons {
+    cursor:pointer;
+}
+
+#rate {
+    color:blue;
+    display:revert;
+}
+
+textarea {
+    width:615px;
+    height:330px;
 }
