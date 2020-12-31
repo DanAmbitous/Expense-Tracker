@@ -1,4 +1,4 @@
-function expenseInput() {
+/*function expenseInput() {
     let input = Number($("#moneyInput").val());
 
     var sum = 0;
@@ -7,19 +7,23 @@ function expenseInput() {
         sum = sum + Number($(this).val());
     });
 
-    $("#theBalance").val(input - sum);
-};
+    $("#theBalance").val(sum);
+};*/
 
-function incomeInput() {
-    let input = Number($("#moneyInput").val());
-
-    var sum = 0;
+function output() {
+    let sumAdd = 0;
 
     $(".income").each(function() {
-        sum = sum + Number($(this).val());
+        sumAdd = sumAdd + Number($(this).val());
     });
 
-    $("#theBalance").val(input + sum);
+    let sumSubtract = 0;
+
+    $(".expense").each(function() {
+        sumSubtract = sumSubtract + Number($(this).val());
+    });
+
+    $("#theBalance").val(sumAdd - sumSubtract);
 }
 
 $("#content-page").show();
@@ -30,8 +34,7 @@ $("#income-page").hide();
 
 function removeRow(element) { //Row remove button
     $(element).closest("tr").remove();
-
-    expenseInput();
+    confirm("Are you sure that you want to clear the row?");
 };
 
 $(document).ready(function() {
@@ -43,7 +46,7 @@ $(document).ready(function() {
                     <input type="text" placeholder="The item's name">
                 </td>
                 <td>
-                    <input type="number" class="expense" placeholder="Item's cost" onkeyup="expenseInput()">
+                    <input type="number" class="expense" placeholder="Item's cost" onkeyup="output()">
                 </td>
                 <td>
                     <input type="date">
@@ -67,7 +70,7 @@ $(document).ready(function() {
                 <input type="text" placeholder="The item's name">
             </td>
             <td>
-                <input type="number" class="income" placeholder="Income" onkeyup="incomeInput()">
+                <input type="number" class="income" placeholder="Income" onkeyup="output()">
             </td>
             <td>
                 <input type="date">
@@ -94,7 +97,7 @@ $(document).ready(function() {
     });
 
     $("#moneyInput").keyup(function() {
-        expenseInput();
+        output();
     });
 
     $("#incomes").click(function() {
