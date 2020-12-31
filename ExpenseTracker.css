@@ -75,6 +75,10 @@ button:active {
     border-color:silver;
 }
 
+#rowRemoveButton:active {
+    opacity:0.8;
+}
+
 #menu-button {
     cursor:pointer;
     display: flex;
@@ -116,4 +120,13 @@ li:hover {
 #settings-button {
     position: relative;
     top: 5px;
+}
+
+#incomes, #expenses {
+    background-color:rgb(89, 208, 255);
+    border-color:rgb(89, 208, 255);
+}
+
+#table-incomes, #expenses {
+    display:none;
 }

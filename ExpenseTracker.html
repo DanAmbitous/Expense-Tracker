@@ -38,8 +38,18 @@
             <input id="theBalance" placeholder="The Balance" readonly>
             <button id="add"><i class="material-icons"><span class="button">add_circle</span></i></button>
             <button id="remove"><i class="material-icons"><span class="button">delete</span></i></button>
+            <button id="incomes">
+                <span class="material-icons">
+                    keyboard_arrow_right
+                </span>
+            </button>
+            <button id="expenses">
+                <span class="material-icons">
+                    keyboard_arrow_left
+                </span>
+            </button>
         </div>
-        <table>
+        <table id="table-expenses">
             <thead>
                 <tr>
                     <th id="nameHeader">Name</th>
@@ -52,6 +62,20 @@
             </tbody>
         </table>
     </div>
+
+    <table id="table-incomes">
+        <thead>
+            <tr>
+                <th id="nameHeader">Name</th>
+                <th id="expenseHeader">Income</th>
+                <th id="dateHeader">Date</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</div>
 
     <!--Settings page-->
 
