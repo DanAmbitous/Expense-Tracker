@@ -84,7 +84,7 @@ $(document).ready(function() {
 
         $("#table-incomes-body").append(rowIncome);
     });
-
+//asd
     $('#table-incomes-body').on('keyup', '.income', function() {
         output()
     });
