@@ -1,15 +1,3 @@
-/*function expenseInput() {
-    let input = Number($("#moneyInput").val());
-
-    var sum = 0;
-
-    $(".expense").each(function() {
-        sum = sum + Number($(this).val());
-    });
-
-    $("#theBalance").val(sum);
-};*/
-
 function output() {
     let sumAdd = 0;
 
@@ -38,10 +26,11 @@ $("#developer-page").hide();
 
 $("#about-page").hide();
 
-
 function removeRow(element) { //Row remove button
     if (confirm("Are you sure that you want to clear the row?") == true) {
-        $(element).closest("tr").remove();
+   //$(element).closest(".expense").removeAttr(".expense");here
+    $(element).closest("tr").remove();
+        output()
     } else {
         return false
     }
@@ -56,7 +45,7 @@ $(document).ready(function() {
                     <input type="text" placeholder="The item's name">
                 </td>
                 <td>
-                    <input type="number" class="expense" placeholder="Item's cost" onkeyup="output()">
+                    <input type="number" class="expense" placeholder="Item's cost" >
                 </td>
                 <td>
                     <input type="date">
@@ -69,18 +58,18 @@ $(document).ready(function() {
             </tr>
             `
             
-        $("#table-expenses").append(rowExpense);
+        $("#table-expenses-body").append(rowExpense); //Here
     });
 
     $("#add-income").click(function() {
         var rowIncome = 
         `
-        <tr class="removeIncome">
+        <tr>
             <td>
                 <input type="text" placeholder="The item's name">
             </td>
             <td>
-                <input type="number" class="income" placeholder="Income" onkeyup="output()">
+                <input type="number" class="income" placeholder="Income" >
             </td>
             <td>
                 <input type="date">
@@ -93,12 +82,38 @@ $(document).ready(function() {
         </tr>
         `
 
-        $("#table-incomes").append(rowIncome);
+        $("#table-incomes-body").append(rowIncome);
     });
 
-    $("#removeExpense").click(function() { //Remove button
+    $('#table-incomes-body').on('keyup', '.income', function() {
+        output()
+    });
+// mousedown ==> startTimer ==> 1 value onchange , mouseup ==> clearTimer
+    $('#table-incomes-body').on('keyup', '.income', function() {
+        output()
+    });
+
+    $('#table-expenses-body').on('keyup', '.expense', function() {
+        output()
+    });
+// These functions
+
+    $("#submit").click(function() {
+        let numberExpenses = $("#table-expenses-body").children().length;
+        let numberIncomes = $("#table-incomes-body").children().length;
+
+        if (numberExpenses == 0 && numberIncomes == 0) {
+            alert("Your table is empty")
+        } else {
+            alert("Submitted") 
+            $("#table-expenses-body").empty();
+            $("#table-incomes-body").empty();
+        }
+    });
+
+    $("#removeExpense").click(function() {
         if(confirm("Are you sure that you want to clear the expense list?") == true) {
-            $(".removeExpense").remove();
+            $("#table-expenses-body").empty();
         } else {
             return false
         }
@@ -106,13 +121,13 @@ $(document).ready(function() {
 
     $("#removeIncome").click(function() { //Remove button
         if (confirm("Are you sure that you want to clear the income list?") == true) {
-            $(".removeIncome").remove();
+            $("#table-incomes-body").empty();
         } else {
             return false
         }
     });
 
-    $("#moneyInput").keyup(function() {
+    $(".incomes").change(function() {
         output();
     });
 
