@@ -41,6 +41,8 @@ $("#rating-page").hide();
 
 $("#developer-page").hide();
 
+$("#about-page").hide();
+
 
 function removeRow(element) { //Row remove button
     if (confirm("Are you sure that you want to clear the row?") == true) {
@@ -253,6 +255,7 @@ $(document).ready(function() {
         $("#settings-page").show("fast");
         $("#rating-page").hide("fast");
         $("#developer-page").hide("fast");  
+        $("#about-page").hide("fast");
     })
 
     $("#rating").click(function() {
@@ -260,6 +263,7 @@ $(document).ready(function() {
         $("#settings-page").hide("fast");
         $("#rating-page").show("fast");   
         $("#developer-page").hide("fast");  
+        $("#about-page").hide("fast");
     });
 
     $("#developer").click(function() {
@@ -267,13 +271,22 @@ $(document).ready(function() {
         $("#settings-page").hide("fast");
         $("#rating-page").hide("fast");   
         $("#developer-page").show("fast"); 
+        $("#about-page").hide("fast"); 
     });
 
+    $("#about").click(function() {
+        $("#content-page").hide("fast");
+        $("#settings-page").hide("fast");
+        $("#rating-page").hide("fast");
+        $("#developer-page").hide("fast");
+        $("#about-page").show("fast"); 
+    });
 
     $("#content").click(function() {
         $("#content-page").show("fast");
         $("#settings-page").hide("fast");
         $("#rating-page").hide("fast");
         $("#developer-page").hide("fast");
+        $("#about-page").hide("fast");
     });
 });

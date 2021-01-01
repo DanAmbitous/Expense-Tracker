@@ -145,6 +145,11 @@ li:hover {
     top: 5px;
 }
 
+#about-sign {
+    position: relative;
+    top: 5px;
+}
+
 #incomes, #expenses {
     background-color:rgb(89, 208, 255);
     border-color:rgb(89, 208, 255);
@@ -196,4 +201,17 @@ textarea {
 
 .clicked {
     color:yellow;
+}
+
+img {
+    width:100px;
+    background-color:rgb(32, 32, 32, 0.9);
+    padding:5vw;
+    border-radius:1vw;
+    border-bottom:1vw solid yellow;
+}
+
+img:hover {
+    position:relative;
+    bottom:1vw;
 }
