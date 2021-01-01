@@ -23,11 +23,6 @@ function output() {
         sumSubtract = sumSubtract + Number($(this).val());
     });
 
-    if (sumAdd || sumSubtract == false) {
-        sumAdd = 0;
-        sumSubtract = 0;
-    }
-
     $("#theBalance").val(sumAdd - sumSubtract);
 }
 

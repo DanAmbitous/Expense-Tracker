@@ -208,10 +208,15 @@ img {
     background-color:rgb(32, 32, 32, 0.9);
     padding:5vw;
     border-radius:1vw;
-    border-bottom:1vw solid yellow;
 }
 
 img:hover {
     position:relative;
     bottom:1vw;
+}
+
+img:active {
+    position:relative;
+    bottom:1vw;
+    background-color:rgb(32, 32, 32);
 }
