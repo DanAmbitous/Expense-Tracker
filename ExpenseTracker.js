@@ -84,19 +84,32 @@ $(document).ready(function() {
 
         $("#table-incomes-body").append(rowIncome);
     });
-//asd
+
     $('#table-incomes-body').on('keyup', '.income', function() {
         output()
     });
+
 // mousedown ==> startTimer ==> 1 value onchange , mouseup ==> clearTimer
+
     $('#table-incomes-body').on('keyup', '.income', function() {
         output()
+    });
+
+    $('#table-incomes-body').on('mousedown', '.income', function() {
+        setInterval(function() {
+            output();
+        }, 100)
     });
 
     $('#table-expenses-body').on('keyup', '.expense', function() {
         output()
     });
-// These functions
+
+   $('#table-expenses-body').on('mousedown', '.expense', function() {
+        setInterval(function() {
+            output();
+        }, 100)
+    });
 
     $("#submit").click(function() {
         let numberExpenses = $("#table-expenses-body").children().length;
@@ -173,86 +186,31 @@ $(document).ready(function() {
     });
 
     //Stars
-    $("#star-button-1").mouseover(function() {
-        $(this).css('color', 'yellow');
+    var selectedStar = null;
+
+    function starCalculator(e) {
+        var index = $(e).index();
+
+       $("#rate button").css('color', 'white');
+
+       $("#rate button").each(function(i, e) {
+           if (i <= index) {
+               $(e).css('color', 'yellow');
+           }
+        });
+    }
+
+    $("#rate button").mouseover(function() {
+        starCalculator($(this));
     });
 
-    $("#star-button-1").mouseout(function() {
-        $(this).css('color', 'white');
+    $("#rate button").mouseout(function() {
+        starCalculator($(selectedStar));
     });
 
-    $("#star-button-2").mouseover(function() {
-        $("#star-button-1").css('color', 'yellow');
-        $(this).css('color', 'yellow');
-    });
-
-    $("#star-button-2").mouseout(function() {
-        $("#star-button-1").css('color', 'white');
-        $(this).css('color', 'white');
-    });
-
-    $("#star-button-3").mouseover(function() {
-        $("#star-button-1").css('color', 'yellow');
-        $("#star-button-2").css('color', 'yellow');
-        $(this).css('color', 'yellow');
-    });
-
-    $("#star-button-3").mouseout(function() {
-        $("#star-button-1").css('color', 'white');
-        $("#star-button-2").css('color', 'white');
-        $(this).css('color', 'white');
-    });
-
-    $("#star-button-4").mouseover(function() {
-        $("#star-button-1").css('color', 'yellow');
-        $("#star-button-2").css('color', 'yellow');
-        $("#star-button-3").css('color', 'yellow');
-        $(this).css('color', 'yellow');
-    });
-
-    $("#star-button-4").mouseout(function() {
-        $("#star-button-1").css('color', 'white');
-        $("#star-button-2").css('color', 'white');
-        $("#star-button-3").css('color', 'white');
-        $(this).css('color', 'white');
-    });
-
-    $("#star-button-5").mouseover(function() {
-        $("#star-button-1").css('color', 'yellow');
-        $("#star-button-2").css('color', 'yellow');
-        $("#star-button-3").css('color', 'yellow');
-        $("#star-button-4").css('color', 'yellow');
-        $(this).css('color', 'yellow');
-    });
-
-    $("#star-button-5").mouseout(function() {
-        $("#star-button-1").css('color', 'white');
-        $("#star-button-2").css('color', 'white');
-        $("#star-button-3").css('color', 'white');
-        $("#star-button-4").css('color', 'white');
-        $(this).css('color', 'white');
-    });
-
-    $("#star-button-6").mouseover(function() {
-        $("#star-button-1").css('color', 'yellow');
-        $("#star-button-2").css('color', 'yellow');
-        $("#star-button-3").css('color', 'yellow');
-        $("#star-button-4").css('color', 'yellow');
-        $("#star-button-5").css('color', 'yellow');
-        $(this).css('color', 'yellow');
-    });
-
-    $("#star-button-6").mouseout(function() {
-        $("#star-button-1").css('color', 'white');
-        $("#star-button-2").css('color', 'white');
-        $("#star-button-3").css('color', 'white');
-        $("#star-button-4").css('color', 'white');
-        $("#star-button-5").css('color', 'white');
-        $(this).css('color', 'white');
-    });
-
-    $("#star-button-1").click(function() {
-        $(this).toggleClass('.clicked');
+    $("#rate button").click(function() {
+        starCalculator($(this));
+        selectedStar = $(this);
     });
     //Stars
 
