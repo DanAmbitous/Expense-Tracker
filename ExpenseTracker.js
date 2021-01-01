@@ -23,6 +23,11 @@ function output() {
         sumSubtract = sumSubtract + Number($(this).val());
     });
 
+    if (sumAdd || sumSubtract == false) {
+        sumAdd = 0;
+        sumSubtract = 0;
+    }
+
     $("#theBalance").val(sumAdd - sumSubtract);
 }
 
@@ -33,6 +38,9 @@ $("#income-page").hide();
 $("#settings-page").hide();
 
 $("#rating-page").hide();
+
+$("#developer-page").hide();
+
 
 function removeRow(element) { //Row remove button
     if (confirm("Are you sure that you want to clear the row?") == true) {
@@ -139,6 +147,8 @@ $(document).ready(function() {
         $("h1, p").css('color', 'black');
         $("#menu").css('color', 'black');
         $("#rating-page").css('color', 'black');
+        $("textarea").css('background-color', 'white');
+        $("#textarea").css('color', 'black');
     });
 
     $("#dark-mode").click(function() {
@@ -146,6 +156,8 @@ $(document).ready(function() {
         $("h1, p").css('color', 'white');
         $("#menu").css('color', 'white');
         $("#rating-page").css('color', 'white');
+        $("textarea").css('background-color', 'black');
+        $("textarea").css('color', 'white');
     });
 
     //Stars
@@ -154,7 +166,7 @@ $(document).ready(function() {
     });
 
     $("#star-button-1").mouseout(function() {
-        $(this).css('color', 'blue');
+        $(this).css('color', 'white');
     });
 
     $("#star-button-2").mouseover(function() {
@@ -163,8 +175,8 @@ $(document).ready(function() {
     });
 
     $("#star-button-2").mouseout(function() {
-        $("#star-button-1").css('color', 'blue');
-        $(this).css('color', 'blue');
+        $("#star-button-1").css('color', 'white');
+        $(this).css('color', 'white');
     });
 
     $("#star-button-3").mouseover(function() {
@@ -174,9 +186,9 @@ $(document).ready(function() {
     });
 
     $("#star-button-3").mouseout(function() {
-        $("#star-button-1").css('color', 'blue');
-        $("#star-button-2").css('color', 'blue');
-        $(this).css('color', 'blue');
+        $("#star-button-1").css('color', 'white');
+        $("#star-button-2").css('color', 'white');
+        $(this).css('color', 'white');
     });
 
     $("#star-button-4").mouseover(function() {
@@ -187,10 +199,10 @@ $(document).ready(function() {
     });
 
     $("#star-button-4").mouseout(function() {
-        $("#star-button-1").css('color', 'blue');
-        $("#star-button-2").css('color', 'blue');
-        $("#star-button-3").css('color', 'blue');
-        $(this).css('color', 'blue');
+        $("#star-button-1").css('color', 'white');
+        $("#star-button-2").css('color', 'white');
+        $("#star-button-3").css('color', 'white');
+        $(this).css('color', 'white');
     });
 
     $("#star-button-5").mouseover(function() {
@@ -202,11 +214,11 @@ $(document).ready(function() {
     });
 
     $("#star-button-5").mouseout(function() {
-        $("#star-button-1").css('color', 'blue');
-        $("#star-button-2").css('color', 'blue');
-        $("#star-button-3").css('color', 'blue');
-        $("#star-button-4").css('color', 'blue');
-        $(this).css('color', 'blue');
+        $("#star-button-1").css('color', 'white');
+        $("#star-button-2").css('color', 'white');
+        $("#star-button-3").css('color', 'white');
+        $("#star-button-4").css('color', 'white');
+        $(this).css('color', 'white');
     });
 
     $("#star-button-6").mouseover(function() {
@@ -219,12 +231,16 @@ $(document).ready(function() {
     });
 
     $("#star-button-6").mouseout(function() {
-        $("#star-button-1").css('color', 'blue');
-        $("#star-button-2").css('color', 'blue');
-        $("#star-button-3").css('color', 'blue');
-        $("#star-button-4").css('color', 'blue');
-        $("#star-button-5").css('color', 'blue');
-        $(this).css('color', 'blue');
+        $("#star-button-1").css('color', 'white');
+        $("#star-button-2").css('color', 'white');
+        $("#star-button-3").css('color', 'white');
+        $("#star-button-4").css('color', 'white');
+        $("#star-button-5").css('color', 'white');
+        $(this).css('color', 'white');
+    });
+
+    $("#star-button-1").click(function() {
+        $(this).toggleClass('.clicked');
     });
     //Stars
 
@@ -236,17 +252,28 @@ $(document).ready(function() {
         $("#content-page").hide("fast");
         $("#settings-page").show("fast");
         $("#rating-page").hide("fast");
+        $("#developer-page").hide("fast");  
     })
 
     $("#rating").click(function() {
         $("#content-page").hide("fast");
         $("#settings-page").hide("fast");
-        $("#rating-page").show("fast");    
+        $("#rating-page").show("fast");   
+        $("#developer-page").hide("fast");  
     });
+
+    $("#developer").click(function() {
+        $("#content-page").hide("fast");
+        $("#settings-page").hide("fast");
+        $("#rating-page").hide("fast");   
+        $("#developer-page").show("fast"); 
+    });
+
 
     $("#content").click(function() {
         $("#content-page").show("fast");
         $("#settings-page").hide("fast");
         $("#rating-page").hide("fast");
+        $("#developer-page").hide("fast");
     });
 });

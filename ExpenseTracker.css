@@ -125,17 +125,22 @@ li:hover {
     background-color:rgb(138, 138, 138, 0.5);
 }
 
-#content-button {
+#content-sign {
     position: relative;
     top: 5px;
 }
 
-#settings-button {
+#settings-sign {
     position: relative;
     top: 5px;
 }
 
-#star-button {
+#star-sign {
+    position: relative;
+    top: 5px;
+}
+
+#developer-sign {
     position: relative;
     top: 5px;
 }
@@ -187,4 +192,8 @@ li:hover {
 textarea {
     width:615px;
     height:330px;
+}
+
+.clicked {
+    color:yellow;
 }
