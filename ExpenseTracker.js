@@ -12,7 +12,7 @@ function output() {
     });
 
     $("#theBalance").val(sumAdd - sumSubtract);
-}
+};
 
 $("#content-page").show();
 
@@ -28,7 +28,6 @@ $("#about-page").hide();
 
 function removeRow(element) { //Row remove button
     if (confirm("Are you sure that you want to clear the row?") == true) {
-   //$(element).closest(".expense").removeAttr(".expense");here
     $(element).closest("tr").remove();
         output()
     } else {
@@ -85,10 +84,6 @@ $(document).ready(function() {
         $("#table-incomes-body").append(rowIncome);
     });
 
-    $('#table-incomes-body').on('keyup', '.income', function() {
-        output()
-    });
-
 // mousedown ==> startTimer ==> 1 value onchange , mouseup ==> clearTimer
 
     $('#table-incomes-body').on('keyup', '.income', function() {
@@ -109,7 +104,7 @@ $(document).ready(function() {
         setInterval(function() {
             output();
         }, 100)
-    });
+   });
 
     $("#submit").click(function() {
         let numberExpenses = $("#table-expenses-body").children().length;
@@ -189,7 +184,7 @@ $(document).ready(function() {
     var selectedStar = null;
 
     function starCalculator(e) {
-        var index = $(e).index();
+       var index = $(e).index();
 
        $("#rate button").css('color', 'white');
 
@@ -211,6 +206,17 @@ $(document).ready(function() {
     $("#rate button").click(function() {
         starCalculator($(this));
         selectedStar = $(this);
+    });
+
+
+    //Code to remove stars when double clicked
+    $("#rate button").dblclick(function() {
+        var selectedIndex = $(selectedStar).index();
+        if($(this).index() == selectedIndex) {
+            $("#rate button").css('color', 'white');
+            selectedStar = null;
+        }
+        
     });
     //Stars
 
